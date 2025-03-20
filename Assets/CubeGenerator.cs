@@ -29,10 +29,19 @@ public class CubeGenerator : MonoBehaviour
     // キューブの生成個数の上限
     private int maxBlockNum = 4;
 
+    //キューブに発生させる効果音
+    private AudioSource AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // AudioSourceからのコンポーネントを取得
+        AudioSource = GetComponent<AudioSource>();
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 衝突時に効果音を再生
+        AudioSource.Play();
     }
 
     // Update is called once per frame
@@ -57,5 +66,7 @@ public class CubeGenerator : MonoBehaviour
             // 次のキューブまでの生成時間を決める
             this.span = this.offsetX + this.spaceX * n;
         }
+
+
     }
 }
