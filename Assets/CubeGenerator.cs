@@ -29,7 +29,7 @@ public class CubeGenerator : MonoBehaviour
     // キューブの生成個数の上限
     private int maxBlockNum = 4;
 
-    //キューブに発生させる効果音
+    //キューブに効果音を再生させる
     private AudioSource AudioSource;
 
     // Start is called before the first frame update
@@ -66,7 +66,5 @@ public class CubeGenerator : MonoBehaviour
             // 次のキューブまでの生成時間を決める
             this.span = this.offsetX + this.spaceX * n;
         }
-
-
     }
 }
