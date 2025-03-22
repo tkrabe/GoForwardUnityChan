@@ -21,9 +21,14 @@ public class CubeController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // 衝突時に効果音を再生
-        AudioSource.Play();  
-}
+        //衝突したオブジェクトにCube Tagがある時のみ効果音を出す
+        if (collision.gameObject.CompareTag("Cube Tag")|| collision.gameObject.CompareTag("ground Tag"))
+        {
+            // 衝突時に効果音を再生
+            AudioSource.Play();
+        }
+        
+     }
 
     // Update is called once per frame
     void Update()
