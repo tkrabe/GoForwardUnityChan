@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BackgroundController : MonoBehaviour
 {
+
+
+
     // スクロール速度
     private float scrollSpeed = -1;
 
