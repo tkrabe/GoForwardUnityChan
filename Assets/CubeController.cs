@@ -10,11 +10,20 @@ public class CubeController : MonoBehaviour
     // 消滅位置
     private float deadLine = -10;
 
+    //キューブに効果音を再生させる
+    private AudioSource AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // AudioSourceからのコンポーネントを取得
+        AudioSource = GetComponent<AudioSource>();
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 衝突時に効果音を再生
+        AudioSource.Play();  
+}
 
     // Update is called once per frame
     void Update()
